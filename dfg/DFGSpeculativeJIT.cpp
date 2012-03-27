@@ -1631,7 +1631,7 @@ void SpeculativeJIT::compilePutByValForByteArray(GPRReg base, GPRReg property, N
             noResult(m_compileIndex);
             return;
         }
-        int clampedValue = clampDoubleToByte(jsValue.asNumber());
+        int clampedValue = (int )clampDoubleToByte(jsValue.asNumber());
         GPRTemporary scratch(this);
         GPRReg scratchReg = scratch.gpr();
         m_jit.move(Imm32(clampedValue), scratchReg);
