@@ -143,7 +143,7 @@ namespace JSC {
         // NOTE: JSObject and its subclasses must be able to gracefully handle ExecState* = 0,
         // because this call may come from inside the compiler.
         JS_EXPORT_PRIVATE static JSObject* toThisObject(JSCell*, ExecState*);
-        JSObject* unwrappedObject();
+        JS_EXPORT_PRIVATE JSObject* unwrappedObject();
 
         bool getPropertySpecificValue(ExecState* exec, const Identifier& propertyName, JSCell*& specificFunction) const;
 

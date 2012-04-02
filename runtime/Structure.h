@@ -227,7 +227,7 @@ namespace JSC {
         PassOwnPtr<PropertyTable> copyPropertyTable(JSGlobalData&, Structure* owner);
         PassOwnPtr<PropertyTable> copyPropertyTableForPinning(JSGlobalData&, Structure* owner);
         JS_EXPORT_PRIVATE void materializePropertyMap(JSGlobalData&);
-        void materializePropertyMapIfNecessary(JSGlobalData& globalData)
+        JS_EXPORT_PRIVATE void materializePropertyMapIfNecessary(JSGlobalData& globalData)
         {
             ASSERT(structure()->classInfo() == &s_info);
             if (!m_propertyTable && m_previous)
