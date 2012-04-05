@@ -2514,11 +2514,13 @@ static inline TCMalloc_PageHeap* getPageHeap()
 void TCMalloc_PageHeap::Shutdown()
 {
     SpinLockHolder h(&pageheap_lock);
+#if OS(WINDOWS)
     if (m_scavengeQueueTimer)
     {
         suspendScavenger();
         scavenge();
     }
+#endif
 }
 
 #define pageheap getPageHeap()
