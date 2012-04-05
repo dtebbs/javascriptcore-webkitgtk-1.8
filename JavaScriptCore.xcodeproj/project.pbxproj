@@ -763,10 +763,10 @@
 		C2EAA3FA149A835E00FCE112 /* CopiedSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EAA3F8149A830800FCE112 /* CopiedSpace.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C2EE59A013FC973F009CEAFE /* DecimalNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EE599E13FC972A009CEAFE /* DecimalNumber.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C2EE59A113FC9768009CEAFE /* DecimalNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2EE599D13FC972A009CEAFE /* DecimalNumber.cpp */; };
+		C547CDBC152D623C00645683 /* GCActivityCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C547CDBB152D623C00645683 /* GCActivityCallback.cpp */; };
 		D7A46A4F1338FFEA00ED695C /* DynamicAnnotations.h in Headers */ = {isa = PBXBuildFile; fileRef = D75AF59612F8CB9500FC0ADF /* DynamicAnnotations.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DD377CBC12072C18006A2517 /* Bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = DD377CBB12072C18006A2517 /* Bitmap.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DDF7ABD411F60ED200108E36 /* GCActivityCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF7ABD211F60ED200108E36 /* GCActivityCallback.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		DDF7ABD511F60ED200108E36 /* GCActivityCallbackCF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DDF7ABD311F60ED200108E36 /* GCActivityCallbackCF.cpp */; };
 		E124A8F70E555775003091F1 /* OpaqueJSString.h in Headers */ = {isa = PBXBuildFile; fileRef = E124A8F50E555775003091F1 /* OpaqueJSString.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E124A8F80E555775003091F1 /* OpaqueJSString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E124A8F60E555775003091F1 /* OpaqueJSString.cpp */; };
 		E178636D0D9BEEC300D74E75 /* InitializeThreading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E178636C0D9BEEC300D74E75 /* InitializeThreading.cpp */; };
@@ -1580,13 +1580,13 @@
 		C2EAA3F8149A830800FCE112 /* CopiedSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopiedSpace.h; sourceTree = "<group>"; };
 		C2EE599D13FC972A009CEAFE /* DecimalNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecimalNumber.cpp; sourceTree = "<group>"; };
 		C2EE599E13FC972A009CEAFE /* DecimalNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecimalNumber.h; sourceTree = "<group>"; };
+		C547CDBB152D623C00645683 /* GCActivityCallback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GCActivityCallback.cpp; sourceTree = "<group>"; };
 		D21202280AD4310C00ED79B6 /* DateConversion.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = DateConversion.cpp; sourceTree = "<group>"; };
 		D21202290AD4310C00ED79B6 /* DateConversion.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DateConversion.h; sourceTree = "<group>"; };
 		D75AF59512F8CB9500FC0ADF /* DynamicAnnotations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DynamicAnnotations.cpp; sourceTree = "<group>"; };
 		D75AF59612F8CB9500FC0ADF /* DynamicAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicAnnotations.h; sourceTree = "<group>"; };
 		DD377CBB12072C18006A2517 /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		DDF7ABD211F60ED200108E36 /* GCActivityCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCActivityCallback.h; sourceTree = "<group>"; };
-		DDF7ABD311F60ED200108E36 /* GCActivityCallbackCF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GCActivityCallbackCF.cpp; sourceTree = "<group>"; };
 		E11D51750B2E798D0056C188 /* StringExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringExtras.h; sourceTree = "<group>"; };
 		E124A8F50E555775003091F1 /* OpaqueJSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpaqueJSString.h; sourceTree = "<group>"; };
 		E124A8F60E555775003091F1 /* OpaqueJSString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpaqueJSString.cpp; sourceTree = "<group>"; };
@@ -2283,6 +2283,7 @@
 		7EF6E0BB0EB7A1EC0079AFAF /* runtime */ = {
 			isa = PBXGroup;
 			children = (
+				C547CDBB152D623C00645683 /* GCActivityCallback.cpp */,
 				0F15F15D14B7A73A005DE37D /* CommonSlowPaths.h */,
 				BCF605110E203EF800B9A64D /* ArgList.cpp */,
 				BCF605120E203EF800B9A64D /* ArgList.h */,
@@ -2336,7 +2337,6 @@
 				F692A85C0255597D01FF60F7 /* FunctionPrototype.cpp */,
 				F692A85D0255597D01FF60F7 /* FunctionPrototype.h */,
 				DDF7ABD211F60ED200108E36 /* GCActivityCallback.h */,
-				DDF7ABD311F60ED200108E36 /* GCActivityCallbackCF.cpp */,
 				BC02E9B80E184545000F9297 /* GetterSetter.cpp */,
 				BC337BDE0E1AF0B80076918A /* GetterSetter.h */,
 				933A349D038AE80F008635CE /* Identifier.cpp */,
@@ -3653,7 +3653,6 @@
 				C22C52FE13FAF6EF00B7DC0D /* fixed-dtoa.cc in Sources */,
 				147F39CB107EC37600427A48 /* FunctionConstructor.cpp in Sources */,
 				147F39CC107EC37600427A48 /* FunctionPrototype.cpp in Sources */,
-				DDF7ABD511F60ED200108E36 /* GCActivityCallbackCF.cpp in Sources */,
 				14280855107EC0E70013E7B2 /* GetterSetter.cpp in Sources */,
 				142E3135134FF0A600AFADB5 /* HandleHeap.cpp in Sources */,
 				142E3137134FF0A600AFADB5 /* HandleStack.cpp in Sources */,
@@ -3822,6 +3821,7 @@
 				0FFFC95B14EF90AD00C72532 /* DFGPhase.cpp in Sources */,
 				0FFFC95D14EF90B300C72532 /* DFGPredictionPropagationPhase.cpp in Sources */,
 				0FFFC95F14EF90BB00C72532 /* DFGVirtualRegisterAllocationPhase.cpp in Sources */,
+				C547CDBC152D623C00645683 /* GCActivityCallback.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
