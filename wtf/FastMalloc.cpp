@@ -1313,6 +1313,8 @@ class TCMalloc_PageHeap {
  public:
   void init();
 
+  void Shutdown();
+
   // Allocate a run of "n" pages.  Returns zero if out of memory.
   Span* New(Length n);
 
@@ -2509,6 +2511,16 @@ static inline TCMalloc_PageHeap* getPageHeap()
     return u.m_pageHeap;
 }
 
+void TCMalloc_PageHeap::Shutdown()
+{
+    SpinLockHolder h(&pageheap_lock);
+    if (m_scavengeQueueTimer)
+    {
+        suspendScavenger();
+        scavenge();
+    }
+}
+
 #define pageheap getPageHeap()
 
 #if USE_BACKGROUND_THREAD_TO_SCAVENGE_MEMORY
@@ -2520,12 +2532,15 @@ void TCMalloc_PageHeap::periodicScavenge()
     SpinLockHolder h(&pageheap_lock);
     pageheap->scavenge();
 
-    if (shouldScavenge()) {
-        rescheduleScavenger();
-        return;
-    }
+    if (isScavengerSuspended() == false)
+    {
+        if (shouldScavenge()) {
+            rescheduleScavenger();
+            return;
+        }
 
-    suspendScavenger();
+        suspendScavenger();
+    }
 }
 
 ALWAYS_INLINE void TCMalloc_PageHeap::signalScavenger()
@@ -3259,6 +3274,7 @@ void TCMalloc_ThreadCache::DestroyThreadCache(void* ptr) {
   threadlocal_heap = NULL;
 #endif
   DeleteCache(reinterpret_cast<TCMalloc_ThreadCache*>(ptr));
+  getPageHeap()->Shutdown();
 }
 
 void TCMalloc_ThreadCache::DeleteCache(TCMalloc_ThreadCache* heap) {
